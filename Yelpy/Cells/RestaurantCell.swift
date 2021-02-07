@@ -14,6 +14,7 @@ class RestaurantCell: UITableViewCell {
     @IBOutlet weak var restaurantImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        restaurantImage.contentMode = .scaleAspectFit
         // Initialization code
     }
 

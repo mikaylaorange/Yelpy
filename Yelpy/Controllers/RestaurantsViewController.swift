@@ -50,11 +50,10 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell") as! RestaurantCell
         let restaurant = restaurantsArray[indexPath.row]
+        print(restaurant)
         cell.restaurantLabel.text = restaurant["name"] as? String ?? ""
         if let imageUrlString = restaurant["image_url"] as? String {
-            // 2.
             let imageUrl = URL(string: imageUrlString)
-            // 3.
             cell.restaurantImage.af.setImage(withURL: imageUrl!)
         }
         return cell
